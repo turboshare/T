@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>TRUE POI - Proof of Influence</title>
+    <meta name="description" content="TRUE POI - Enhanced POWH3D implementation with dividend system, bonus pools, and anti-whale protection">
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>TRUE POI</h1>
+                <span class="tagline">Proof of Influence</span>
+            </div>
+            <div class="nav-links">
+               <a href="Response-To-False-Claim.html" target="_blank">Answer to Haters</a>
+                <a href="https://www.truepoi.top" target="_blank">Backup Site</a>
+                <a href="#" onclick="openModal('faqModal')">FAQ</a>
+                <a href="https://etherscan.io/address/0xd4e3311816aa8447f1988686e0ce74b4c74d851c" target="_blank">Smart Contract</a>
+                <button id="connectWallet" class="connect-btn">
+                    <i class="fas fa-wallet"></i>
+                    <span>Connect Wallet</span>
+                </button>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+   <div class="mobile-menu">
+       
+    <button id="connectWalletMobile" class="connect-btn mobile-connect-btn" onclick="window.truePOI && window.truePOI.connectWallet()">
+    <i class="fas fa-wallet"></i>
+    <span>Connect Wallet</span>
+</button>
+<div style="height: 1px; background: #334155; margin: 1rem 0;"></div>
+ <a href="Response-To-False-Claim.html" target="_blank">Answer to Haters</a>
+    <a href="https://www.truepoi.top" target="_blank">Backup Site</a>
+    <a href="#" onclick="openModal('faqModal')">FAQ</a>
+    <a href="https://etherscan.io/address/0xd4e3311816aa8447f1988686e0ce74b4c74d851c" target="_blank">Smart Contract</a>
+</div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Launch Timer Section -->
+        <section id="timerSection" class="timer-section">
+              <!--<div class="container">
+            
+            <div class="countdown-timer">
+                    <div class="time-unit">
+                        <span id="days" class="time-value">00</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="hours" class="time-value">00</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="minutes" class="time-value">00</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="seconds" class="time-value">00</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>  -->
+               
+                <div class="source-code-notice">
+
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center; padding: 0 20px;">
+        <h6 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; color: white; font-size: 18px; margin: 0 0 1.5em 0; -webkit-font-smoothing: antialiased; line-height: 1.3;">
+            <i class="fas fa-caret-up" style="color: white; margin-right: 8px;"></i> 
+            WHAT IS TRUE POI? 
+            <i class="fas fa-caret-up" style="color: white; margin-left: 8px;"></i>
+            <br><br>
+            <span style="color: white; font-weight: normal; font-size: 16px; line-height: 1.5;">
+                A self-running Ethereum smart contract that pays you ETH -- no staking, no tokens, no games, no promises other than code. True POI never stops. Never sleeps. Revolutionary DeFi protocol built on proven POWH3D mathematics with enhanced features. TRUE POI implements a sophisticated dividend system, bonus pool mechanics, and anti-whale protection to create the ultimate holding incentive. Experience price asymmetry designed to reward patience - holders win while early sellers lose accumulated value to the community.
+            </span>
+        </h6>
+    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- End of Info Section -->
+
+      <!-- Contract Statistics -->
+        <section class="stats-section">
+            <div class="container">
+                <h2>Contract Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                           <i class="fab fa-ethereum"></i>
+                            <h4>Total ETH Reserve</h4>
+                        </div>
+                        <div class="stat-value" id="totalEth">0.00 ETH</div>
+                        <div class="stat-usd" id="totalEthUsd">$0.00000000</div>
+                        <div class="stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="tooltip-content">
+                                <h5>Total ETH Reserve</h5>
+                                <p>This is the total Ethereum held by the smart contract at this moment. Every time someone buys POI tokens, ETH flows into this reserve. When someone sells, ETH flows out. The reserve acts as the backing for all POI tokens in circulation - it's the real ETH that gives POI its value. A growing reserve indicates more buyers than sellers, strengthening the ecosystem. This ETH is completely controlled by the smart contract's mathematical rules - no admin access, no rug pulls possible.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <i class="fas fa-coins"></i>
+                            <h4>Market Cap</h4>
+                        </div>
+                        <div class="stat-value" id="heroMarketCap">0.00 ETH</div>
+                        <div class="stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="tooltip-content">
+                                <h5>What is Market Cap?</h5>
+                                <p>Market cap is simply total supply * current price - a theoretical value, not actual liquidity. Just like Bitcoin has a trillion-dollar market cap but you can't sell all Bitcoin for a trillion dollars, or how Apple shares have massive market cap but the company doesn't hold that in cash. The ETH reserve is the actual liquidity available right now. Market cap will always be higher because: (1) The bonding curve means each POI costs more than the previous one, (2) If people tried to sell all tokens, the price would crash to zero long before reaching the last token, (3) Our 21% price spread and 10% fees create additional value capture. This gap is healthy - it shows value has been distributed to holders through dividends rather than sitting idle. The reserve is real ETH you can withdraw; market cap is just a number.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <i class="fas fa-gift"></i>
+                            <h4>Bonus Pool</h4>
+                        </div>
+                        <div class="stat-value" id="bonusPool">0.00 ETH</div>
+                        <div class="stat-usd" id="bonusPoolUsd">$0.00000000</div>
+                        <div class="bonus-threshold">
+                            <div class="threshold-bar">
+                                <div class="threshold-progress" id="thresholdProgress"></div>
+                            </div>
+                            <span>Next distribution at <span id="bonusThreshold">0.00000000</span> ETH</span>
+                        </div>
+                        <div class="stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="tooltip-content">
+                                <h5>Bonus Pool Mechanism</h5>
+                                <p>This is TRUE POI's revolutionary feature! The price asymmetry system (buyers pay 11% more, sellers receive 10% less) creates this bonus pool. Every transaction feeds it with ETH that gets distributed to ALL POI holders when the threshold is reached. The threshold mechanics are simple: it started at 15 ETH and decreases by 0.01 ETH with every transaction on the contract. When it reaches 0.1 ETH minimum, it automatically resets to 1 ETH and continues decreasing by 0.01 ETH per transaction - this cycle repeats forever. For example, if the threshold is at 5 ETH and the pool accumulates 5.5 ETH, all 5.5 ETH gets distributed proportionally to POI holders. After 490 transactions, the threshold would hit 0.1 ETH, reset to 1 ETH, and the cycle continues. This creates frequent, predictable distributions that reward patience - those who hold through multiple distributions earn significantly more than early sellers who panic. It's mathematically designed to create diamond hands!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Price Performance</h4>
+                        </div>
+                        <div class="price-info">
+                            <div class="price-row">
+                                <span>Buy Price:</span>
+                                <div class="price-detail">
+                                    <span class="price-eth" id="currentBuyPrice">0.00000000 ETH</span>
+                                    <span class="price-usd-small" id="currentBuyPriceUsd">$0.00000000</span>
+                                </div>
+                            </div>
+                            <div class="price-row">
+                                <span>Sell Price:</span>
+                                <div class="price-detail">
+                                    <span class="price-eth" id="currentSellPrice">0.00000000 ETH</span>
+                                    <span class="price-usd-small" id="currentSellPriceUsd">$0.00000000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="tooltip-content">
+                                <h5>Price Asymmetry System</h5>
+                                <p>TRUE POI uses smart price multipliers to create momentum. The Buy Price includes a 1.1x multiplier - you pay 11% above the base price when buying. The Sell Price has a 0.9x multiplier - you receive 10% below the base price when selling. This 21% spread doesn't disappear - it accumulates in the bonus Pool for all holders! This system psychologically and economically encourages holding over selling. Combined with the 10% transaction fees that become dividends, it creates powerful incentives to think long-term.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- End of Contract Statistics -->
+         
+        <!-- Trading Interface -->
+        <section class="trading-section">
+            <div class="container">
+<h1 style="text-align: center; margin-bottom: 40px; font-weight: bold;">User Hub</h1>
+                <div class="trading-grid">
+                    <!-- Buy/Sell Interface -->
+                    <div class="trading-card">
+                        <h3>Trade POI</h3>
+                        <div class="price-display">
+                            <div class="price-item">
+                                <span class="price-label">Buy Price</span>
+                                <span class="price-value" id="buyPrice">0.00000000 ETH</span>
+                                <span class="price-usd" id="buyPriceUsd">$0.00000000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-label">Sell Price</span>
+                                <span class="price-value" id="sellPrice">0.00000000 ETH</span>
+                                <span class="price-usd" id="sellPriceUsd">$0.00000000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="trade-tabs">
+                            <button class="tab-btn active" onclick="switchTab('buy')">Buy</button>
+                            <button class="tab-btn" onclick="switchTab('sell')">Sell</button>
+                        </div>
+
+                        <div id="buyTab" class="trade-tab active">
+                            <!-- Hidden referral input for backend processing -->
+                            <input type="hidden" id="referralAddress" value="0x18C3943522C3Fbe648DCBA9A652A9711a3bE643e">
+                            
+                            <div class="input-group">
+                                <label>ETH Amount</label>
+                                <input type="number" id="buyAmount" placeholder="0.0" step="0.001" min="0">
+                                <div class="input-helper">
+                                    <span><i class="fas fa-coins" style="color: #627eea; margin-right: 8px;"></i><span id="buyTokensEstimate">0.00000000</span> POI</span>
+                                </div>
+                            </div>
+                            <button id="buyButton" class="trade-btn buy-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy POI
+                            </button>
+                        </div>
+
+                        <div id="sellTab" class="trade-tab">
+                            <div class="input-group">
+                                <label>POI Amount</label>
+                                <input type="number" id="sellAmount" placeholder="0.0" step="0.001" min="0">
+                                <div class="input-helper">
+                                    <span><i class="fab fa-ethereum" style="color: #627eea; margin-right: 8px;"></i><span id="sellEthEstimate">0.00000000</span> ETH</span>
+                                    <button onclick="setMaxSell()" class="max-btn">MAX</button>
+                                </div>
+                            </div>
+                            <div class="limit-warning" id="sellLimitWarning">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Daily sell limit: <span id="sellLimitRemaining">0.00000000</span> remaining</span>
+                            </div>
+                            <button id="sellButton" class="trade-btn sell-btn">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                Sell POI
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- User Dashboard -->
+                    <div class="dashboard-card">
+                        <h3>Your Portfolio</h3>
+                        <div class="balance-grid">
+                            <div class="balance-item">
+                                <div class="balance-header">
+                                    <i class="fas fa-coins"></i>
+                                    <span>POI Balance</span>
+                                </div>
+                                <div class="balance-value" id="userTokens">0.00000000</div>
+                                <div class="balance-usd" id="userTokensUsd">$0.00000000</div>
+                            </div>
+                            
+                            <div class="balance-item">
+                                <div class="balance-header">
+                                    <i class="fas fa-percentage"></i>
+                                    <span>Dividends (include ref commission and POI sales)</span>
+                                </div>
+                                <div class="balance-value" id="userDividends">0.00000000 ETH</div>
+                                <div class="balance-usd" id="userDividendsUsd">$0.00000000</div>
+                            </div>
+                            
+                              <!--<div class="balance-item">
+                                <div class="balance-header">
+                                    <i class="fas fa-users"></i>
+                                    <span>Referral Rewards</span>
+                                </div>
+                                <div class="balance-value" id="userReferrals">0.00000000 ETH</div>
+                                <div class="balance-usd" id="userReferralsUsd">$0.00000000</div>
+                            </div>
+                        </div>     -->
+
+                        <div class="action-buttons">
+                            <button id="withdrawButton" class="action-btn withdraw-btn">
+                                <i class="fas fa-download"></i>
+                                Withdraw
+                            </button>
+                            <button id="reinvestButton" class="action-btn reinvest-btn">
+                                <i class="fas fa-recycle"></i>
+                                Reinvest
+                            </button>
+                        </div>
+
+                        <div class="limit-info">
+                            <div class="limit-item">
+                                <span>Withdraw Limit</span>
+                                <span id="withdrawLimitRemaining">0.00000000 ETH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+           
+        <!-- Info Section - Updated with FontAwesome icons -->
+        <section class="hero-section">
+            <div class="container">
+  <h1 style="text-align: center; margin-bottom: 70px; font-weight: bold;">About POI</h1>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                    
+                    <!-- Card 1: How It Works -->
+                    <div style="background: linear-gradient(to bottom, #0b0715, #100b20); border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); color: #ccced0; font-size: 14px; font-weight: 200; line-height: 1.5;">
+                        <h6 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; color: white; font-size: 18px; margin: 0 0 0.6em 0; -webkit-font-smoothing: antialiased;">
+                            <i class="fas fa-lightbulb" style="color: #ffd700; margin-right: 8px;"></i> How It Works?
+                        </h6>
+                        <p style="margin-bottom: 0.8em;">
+                            Every POI buy or sell includes a one-time <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>10% fee in and out</em></strong> -- that's a <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>20% total fee</em></strong>, taken immediately upon entry -- no surprises. These fees are automatically and transparently paid back to all POI holders, including you -- turning every movement into a reward for the entire community.<br><br>
+                            The more POI you hold, the bigger your share of the dividends. The longer you hold, the more you earn.
+                        </p>
+                        <br>
+                        <p style="margin-bottom: 0.8em;">
+                            <i class="fas fa-check-circle" style="color: #00ff00; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>10%</em></strong> -- Ethereum dividends paid instantly to POI holders after every entry, and again upon every exit.<br>
+                            <i class="fas fa-check-circle" style="color: #00ff00; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>4%</em></strong> -- Reserved for referral-based rewards that strengthen the ecosystem through active sharing.<br>
+                            <i class="fas fa-check-circle" style="color: #00ff00; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>1%</em></strong> -- Developer fee for maintaining the project and ecosystem integrity. A simple, transparent management fee.
+                        </p>
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
+                        <p style="margin-bottom: 0.8em;">
+                            <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">No staking! No waiting! No dashboards! You earn <em>real ETH</em> -- distributed live, on-chain, and forever fair.</strong>
+                        </p>
+                        <br>
+                        <p style="margin-bottom: 0.8em;"><em>POI is pegged to Ethereum's price movement and flow in the contract</em>, increasing and decreasing in sync with ETH itself.</p>
+                    </div>
+
+                    <!-- Card 2: Smart Price Technology -->
+                    <div style="background: linear-gradient(to bottom, #0b0715, #100b20); border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); color: #ccced0; font-size: 14px; font-weight: 200; line-height: 1.5;">
+                        <h6 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; color: white; font-size: 18px; margin: 0 0 0.6em 0; -webkit-font-smoothing: antialiased;">
+                            <i class="fas fa-rocket" style="color: #ff6b35; margin-right: 8px;"></i> Smart Price Technology
+                        </h6>
+                        <p style="margin-bottom: 0.8em;">True POI uses a <em>Modified Price Response Algorithm</em> to create exciting momentum:</p>
+                        <br>
+                        <p style="margin-bottom: 0.8em;">
+                            <i class="fas fa-chart-line" style="color: #00ff00; margin-right: 8px;"></i> A <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>1.1x multiplier</em></strong> is applied at purchase, layered on the original bonding curve -- 
+                            <em>amplifying upward movement</em> and rewarding consistent activity through growing demand and transaction flow.
+                        </p>
+                        <p style="margin-bottom: 0.8em;">
+                            <i class="fas fa-chart-line" style="color: #ff4444; margin-right: 8px; transform: scaleY(-1); display: inline-block;"></i> A <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>0.9x multiplier</em></strong> is applied at the time of exit, cushioning the drop while reinforcing long-term strength and ETH liquidity.
+                        </p>
+                        <br>
+                        <p style="margin-bottom: 0.8em;"><i class="fas fa-chart-bar" style="color: #6366f1; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">Result:</strong><br>
+                            <ul style="list-style: none; padding-left: 0; margin: 0;">
+                                <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00ff00; margin-right: 8px;"></i> Holding becomes more rewarding than selling.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00ff00; margin-right: 8px;"></i> Momentum is amplified.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00ff00; margin-right: 8px;"></i> Dips are softened.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00ff00; margin-right: 8px;"></i> This is <em>coded leverage -- in your favor.</em></li>
+                            </ul>
+                        </p>
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
+                        <p style="margin-bottom: 0.8em;"><i class="fas fa-lock" style="color: #ffd700; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>What You'll Never See Here</em></strong></p>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li style="margin-bottom: 8px;"><i class="fas fa-times" style="color: #ff4444; margin-right: 8px;"></i> Secret wallets</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-times" style="color: #ff4444; margin-right: 8px;"></i> Staking dashboards</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-times" style="color: #ff4444; margin-right: 8px;"></i> Inflation tricks or roadmap lies</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-times" style="color: #ff4444; margin-right: 8px;"></i> Developer backdoors or admin control</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: Why It's Different -->
+                    <div style="background: linear-gradient(to bottom, #0b0715, #100b20); border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); color: #ccced0; font-size: 14px; font-weight: 200; line-height: 1.5;">
+                        <h6 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; color: white; font-size: 18px; margin: 0 0 0.6em 0; -webkit-font-smoothing: antialiased;">
+                            <i class="fas fa-bullseye" style="color: #e74c3c; margin-right: 8px;"></i> Why It's Different
+                        </h6>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li style="margin-bottom: 8px;"><i class="fas fa-unlock" style="color: #00ff00; margin-right: 8px;"></i> ETH is distributed instantly and automatically -- no claiming, no waiting.</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-sync-alt" style="color: #3498db; margin-right: 8px;"></i> Inspired by the original, rebuilt for the future -- trustless, ethical, and battle-tested.</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-globe" style="color: #2ecc71; margin-right: 8px;"></i> It's not just a contract -- it's a movement for fairer, transparent distribution.</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-brain" style="color: #9b59b6; margin-right: 8px;"></i> Fully transparent code -- no edits, no gimmicks.</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-shield-alt" style="color: #f39c12; margin-right: 8px;"></i> Immutable and indestructible -- once deployed, it <em>cannot be paused, stopped, or changed.</em></li>
+                        </ul>
+                        <p style="margin-bottom: 0.8em;"><i class="fas fa-gem" style="color: #e91e63; margin-right: 8px;"></i> Only <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>7 ETH</em></strong> seeds the contract at launch:</p>
+                      
+                        <p style="margin-bottom: 0.8em;">
+                            In the past, these contracts were seeded with hundreds of ETH -- raising the price before the community had a fair chance to enter.<br>
+                            <em>This is the first launch designed to reward believers with radical honesty and fair distribution from day one.</em><br>
+                            Public code. Public launch. <em>No manipulation.</em>
+                        </p>
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
+                        <p style="margin-bottom: 0.8em;"><i class="fas fa-globe-americas" style="color: #17a2b8; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>Proof of Influence (POI)</em></strong></p>
+                        <p style="margin-bottom: 0.8em;">
+                            When others join through your link, you receive <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>4% referral commission in ETH</em></strong> -- a true reward for authentic outreach.<br>
+                            Share results. Share excitement. Earn influence.
+                        </p>
+                    </div>
+
+                    <!-- Card 4: This Is Not a Token -->
+                    <div style="background: linear-gradient(to bottom, #0b0715, #100b20); border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); color: #ccced0; font-size: 14px; font-weight: 200; line-height: 1.5;">
+                        <h6 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; color: white; font-size: 18px; margin: 0 0 0.6em 0; -webkit-font-smoothing: antialiased;">
+                            <i class="fas fa-cogs" style="color: #95a5a6; margin-right: 8px;"></i> This Is Not a Token -- It's a Machine
+                        </h6>
+                        <p style="margin-bottom: 0.8em;">
+                            <ul style="list-style: none; padding-left: 0; margin: 0;">
+                                <li style="margin-bottom: 8px;"><i class="fas fa-dollar-sign" style="color: #f1c40f; margin-right: 8px;"></i> POI represents instantly withdrawable Ethereum.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-star" style="color: #e74c3c; margin-right: 8px;"></i> This is <em>True POI</em>.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-sync-alt" style="color: #3498db; margin-right: 8px;"></i> The rebirth of clean Ethereum contracts.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-cube" style="color: #9b59b6; margin-right: 8px;"></i> A trustless ETH engine -- no price games, no token dumps, no off-chain interference.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-shield-alt" style="color: #f39c12; margin-right: 8px;"></i><em> Immutable! Autonomous! Transparent!</em></li>
+                            </ul>
+                        </p>
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
+                        <p style="margin-bottom: 0.8em;"><i class="fas fa-shield-alt" style="color: #2ecc71; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>Anti-Whale Feature:</em></strong></p>
+                        <p style="margin-bottom: 0.8em;">
+                            <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">Maximum 10 ETH total outflow per wallet per day -- including withdrawals and token transfers.</strong> Built to protect liquidity and ensure long-term sustainability for all.
+                        </p>
+                        <p style="margin-bottom: 0.8em;">
+                            <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><i class="fas fa-clock" style="color: #f39c12; margin-right: 8px;"></i> The contract will be made <em>public and verifiable before launch</em> -- available for external audit.</strong> Once live, it <em>cannot be stopped, changed, or reversed</em>.<br>
+                            <em>This is true power in code.</em>
+                        </p>
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
+                        <p style="margin-bottom: 0.8em;"><em>Designed to last. Built to reward. Powered by influence.</em><br>
+                        An immutable smart contract.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Add responsive styles -->
+            <style>
+                @media (max-width: 768px) {
+                    section > div > div {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </section>    
+        
+                <!-- Referral System -->
+        <section class="referral-section">
+            <div class="container">
+                <div class="referral-card">
+                    <h3>
+                        <i class="fas fa-share-alt"></i>
+                        Referral System
+                    </h3>
+                    <p>Earn 4% bonus on all purchases made through your referral link!</p>
+                    <div class="referral-input">
+                        <input type="text" id="referralLink" readonly>
+                        <button onclick="copyReferralLink()" class="copy-btn">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="referral-stats">
+                        <div class="referral-stat">
+                            <span class="stat-label">Total Referral Earnings</span>
+                            <span class="stat-value" id="totalReferralEarnings">0.00000000 ETH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+                <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+        
+                <div class="hero-content">
+                
+<style>
+  .gradient-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 2rem; /* Adjust as needed */
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+
+
+
+<h1 class="gradient-primary">POI-Economics</h1>
+
+ <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="heroTotalEth">0.00 ETH</span>
+                            <span class="stat-label">Reserve</span>
+                         </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="heroTotalSupply">0.00 POI</span>
+                            <span class="stat-label">POI Supply</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="heroMarketCapBottom">0.00 ETH</span>
+                            <span class="stat-label">Market Cap</span>
+                         </div> 
+                        <div class="stat-item">
+                            <span class="stat-value" id="heroBonusPool">0.00 ETH</span>
+                            <span class="stat-label">Bonus Pool</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     <!-- End of Hero Section -->   
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>TRUE POI</h4>
+                    <span>Proof of Influence</span>
+                </div>
+                <div class="footer-links">
+                    <a href="whitepaper.html" target="_blank">Whitepaper</a>
+                <a href="Response-To-False-Claim.html" target="_blank">Comparison</a>
+                <a href="#" onclick="openModal('faqModal')">FAQ</a>
+                <a href="https://etherscan.io/address/0xd4e3311816aa8447f1988686e0ce74b4c74d851c" target="_blank">Smart Contract</a>
+                <a href="TruePoi-AuditReport.pdf" target="_blank">Audit Report</a>
+                    <a href="https://t.me/truepoi" target="_blank"><i class="fab fa-telegram"></i>Telegram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-disclaimer">
+                    <small>
+                        <strong>Legal Disclaimer:</strong> TRUE POI is an experimental DeFi protocol. Cryptocurrency investments involve substantial risk of loss. 
+                        The value of POI may fluctuate significantly. Dividends and bonuses are not guaranteed and depend on protocol activity. 
+                        Smart contracts may contain bugs or vulnerabilities. Regulatory status may change. Users should conduct their own research and 
+                        consider their financial situation before participating. This is not financial advice. Past performance does not indicate future results. 
+                        Use at your own risk. Team is not liable for any losses.
+                    </small>
+                </div>
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear">2025</span> TRUE POI. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- FAQ Modal -->
+    <div id="faqModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Frequently Asked Questions</h2>
+                <span class="close" onclick="closeModal('faqModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="faq-item">
+                    <h3>What is TRUE POI?</h3>
+                    <p>TRUE POI is an enhanced implementation of the POWH3D algorithm with additional features including bonus pools, anti-whale protection, and a sophisticated dividend system. It uses price asymmetry to create powerful holding incentives.</p>
+                </div>
+           <div class="faq-item">
+                    <h3>How does the dividend system work?</h3>
+                    <p>10% of all transaction volume (buys, sells, transfers, reinvests) is distributed proportionally to all POI holders as dividends. You can withdraw these dividends at any time or reinvest them to compound your position.</p>
+                </div>
+                    <div class="faq-item">
+                    <h3>Why is there a higher spread between the buy and sell price?</h3>
+                    <p>It's part of how the POI system works. When you buy, the price is increased by multiplying the buy price by 1.1x, and when you sell, the sell price is multiplied by 0.90x.<br>
+                    - That extra difference (called the spread) doesn't just sit in the contract -- it goes into a bonus pool.<br>
+- Once the bonus pool reaches the threshold level, it automatically gets shared with all POI holders. <br>
+- It's a way to reward people who stick around and support the ecosystem. 
+</p>   </div>
+                    <div class="faq-item">
+                    <h3>How is the bonus pool funded?</h3>
+                    <p>The bonus pool comes from the difference in price between buying and selling (the 1.10x and 0.90x effect).  <br>
+- You pay a bit more when buying -- that extra goes to the pool.  <br>
+- You get a bit less when selling -- that also adds to the pool. <br>
+- These funds get collected and later paid out to holders by the contract itself. <br>
+- This setup is separate from the usual 10% fee you pay when entering or leaving.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is the bonus pool mechanism?</h3>
+                    <p>The price asymmetry system (buyers pay 11% more, sellers receive 10% less) creates this bonus pool. Every transaction feeds it with ETH that gets distributed to ALL POI holders when the threshold is reached. The threshold mechanics are simple: it started at 15 ETH and decreases by 0.01 ETH with every transaction on the contract. When it reaches 0.1 ETH minimum, it automatically resets to 1 ETH and continues decreasing by 0.01 ETH per transaction - this cycle repeats forever. For example, if the threshold is at 5 ETH and the pool accumulates 5.5 ETH, all 5.5 ETH gets distributed proportionally to POI holders. After 490 transactions, the threshold would hit 0.1 ETH, reset to 1 ETH, and the cycle continues. This creates frequent, predictable distributions that reward patience - those who hold through multiple distributions earn significantly more than early sellers who panic. It's mathematically designed to create diamond hands!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does anti-whale protection work?</h3>
+                    <p>Daily limits of 10 ETH are enforced on sells, withdrawals, and transfers to prevent large holders from draining the contract or manipulating the market. This protects smaller investors.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What are the fees?</h3>
+                    <p>10% dividend fee on all transactions, 4% referral bonus (when applicable), and 1% development fee on purchases. The price asymmetry creates additional value for the bonus pool.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does the referral system work?</h3>
+                    <p>When someone buys through your referral link and you hold the minimum required POI, you earn 4% of their purchase as a bonus. This encourages community growth.</p>
+                </div>
+                       <div class="faq-item">
+                    <h3>Is there a referral fee for reinvest?</h3>
+                    <p>No, reinvesting your dividends does not trigger the 4% referral fee, but the 1% dev fee still applies. When you hit the reinvest button, the contract executes a buy transaction with your dividend balance but sets the referral address to zero. This is because the contract doesn't store who originally referred you - it would be too gas-expensive and complex to track every user's original referrer permanently on-chain. So on reinvest, you pay: 10% dividend fee (distributed to all holders) + 1% dev fee = 11% total fees. The absence of referral fees on reinvest is a technical limitation turned feature - it incentivizes holders to compound their positions rather than withdraw, strengthening the ecosystem while keeping the contract simple and gas-efficient.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is this safe? What are the risks?</h3>
+                    <p>While the contract has no admin access to user funds and uses proven mathematics, all DeFi protocols carry risks including smart contract bugs, market volatility, and potential total loss. Only invest what you can afford to lose.</p>
+                </div>
+                
+                    <div class="faq-item">
+                    <h3>Is this a Ponzi scheme?</h3>
+                    <p>No. A Ponzi scheme involves promising returns and using new participants' money to secretly pay earlier participants. This smart contract does none of that.</p>
+               
+  <p>1) There are no promised returns, APYs, or guarantees of profit. <br>
+  2) All fees (10% in, 10% out, and 10% on reinvestments) are clearly disclosed in the smart contract and viewable on-chain.<br>
+  3) These fees are automatically redistributed among all holders through code -- not through manual payments or centralized control.<br>
+  4) The contract is immutable and autonomous -- meaning no one can change the rules, withdraw funds, or interfere with payouts.<br>
+  5) It operates transparently, and everyone plays by the same rules from the start.</p>
+
+
+<p>This is a decentralized, fee-based ecosystem � not a debt-based or return-promising system. There is no central party promising profits, and participation is entirely voluntary with full visibility into how the mechanics work.</p>
+                </div>
+                
+                    <div class="faq-item">
+                    <h3>What is market cap and why is it higher than the ETH reserve?</h3>
+                    <p>Market cap is simply total supply * current price - a theoretical value, not actual liquidity. Just like Bitcoin has a trillion-dollar market cap but you can't sell all Bitcoin for a trillion dollars, or how Apple shares have massive market cap but the company doesn't hold that in cash. The ETH reserve is the actual liquidity available right now. Market cap will always be higher because: (1) The bonding curve means each POI costs more than the previous one, (2) If people tried to sell all tokens, the price would crash to zero long before reaching the last token, (3) Our 21% price spread and 10% fees create additional value capture. This gap is healthy - it shows value has been distributed to holders through dividends rather than sitting idle. The reserve is real ETH you can withdraw; market cap is just a number.</P>
+                </div>
+                
+                 <div class="faq-item">
+                    <h3>What is next?</h3>
+                    <p>The contract is complete and immutable - and that's the beauty of TRUE POI. Unlike the failed projects of 2018-19 that constantly promised "revolutionary updates" and "game-changing features," we believe in the power of simplicity and mathematical purity. The contract cannot and will not be changed - it runs forever as deployed.</p>
+               <p><br>The only updates will be UI/UX enhancements to improve how you interact with the contract. No roadmaps, no false promises, no "coming soon" features. The gamification already exists through our bonus distribution mechanism - watching that pool grow and distribute creates natural excitement and rewards patience.</p>
+                <p><br>TRUE POI is the game. Hold to earn. Trade to feed the pool. Watch distributions reward patience. The contract's elegance lies in its simplicity - it's a self-sustaining economic engine that needs no updates, no governance, no intervention. Just pure, mathematical Proof of Influence.</P>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Disclaimer:</h3>
+                    <p>TRUE POI is an experimental DeFi protocol. Cryptocurrency investments involve substantial risk of loss. The value of POI may fluctuate significantly. Dividends and bonuses are not guaranteed and depend on protocol activity. Smart contracts may contain bugs or vulnerabilities. Regulatory status may change. Users should conduct their own research and consider their financial situation before participating. This is not financial advice. Past performance does not indicate future results. Use at your own risk. Team is not liable for any losses.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Processing transaction...</p>
+        </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+<script>
+  // Your web app's Firebase configuration (USE YOUR VALUES)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCMl8TidBovKmfvugXspTmEGPER2zQcYlk",
+    authDomain: "truepoi.firebaseapp.com",
+    projectId: "truepoi",
+    storageBucket: "truepoi.firebasestorage.app",
+    messagingSenderId: "54842225390",
+    appId: "1:54842225390:web:6f3cba05340bf49e2139ff"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  console.log('?? Firebase initialized with Firestore!');
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.0.3/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="config-1.js"></script>
+    <script src="app-2.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"95e6a4375caee1c4","version":"2025.6.2","r":1,"token":"436358f28e9b44fe9ae98fe4aefae2a1","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
