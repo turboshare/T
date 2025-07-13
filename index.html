@@ -22,7 +22,7 @@
                <a href="Response-To-False-Claim.html" target="_blank">Answer to Haters</a>
                 <a href="https://www.truepoi.top" target="_blank">Backup Site</a>
                 <a href="#" onclick="openModal('faqModal')">FAQ</a>
-                <a href="https://etherscan.io/address/0xd4e3311816aa8447f1988686e0ce74b4c74d851c" target="_blank">Smart Contract</a>
+                <a href="https://polygonscan.com/address/0xbb31e2c4c01a0fc26227fb8e96cc73a9e89529df" target="_blank">Smart Contract</a>
                 <button id="connectWallet" class="connect-btn">
                     <i class="fas fa-wallet"></i>
                     <span>Connect Wallet</span>
@@ -45,7 +45,7 @@
  <a href="Response-To-False-Claim.html" target="_blank">Answer to Haters</a>
     <a href="https://www.truepoi.top" target="_blank">Backup Site</a>
     <a href="#" onclick="openModal('faqModal')">FAQ</a>
-    <a href="https://etherscan.io/address/0xd4e3311816aa8447f1988686e0ce74b4c74d851c" target="_blank">Smart Contract</a>
+    <a href="https://polygonscan.com/address/0xbb31e2c4c01a0fc26227fb8e96cc73a9e89529df" target="_blank">Smart Contract</a>
 </div>
 
     <!-- Main Content -->
@@ -82,7 +82,7 @@
             <i class="fas fa-caret-up" style="color: white; margin-left: 8px;"></i>
             <br><br>
             <span style="color: white; font-weight: normal; font-size: 16px; line-height: 1.5;">
-                A self-running Ethereum smart contract that pays you ETH -- no staking, no tokens, no games, no promises other than code. True POI never stops. Never sleeps. Revolutionary DeFi protocol built on proven POWH3D mathematics with enhanced features. TRUE POI implements a sophisticated dividend system, bonus pool mechanics, and anti-whale protection to create the ultimate holding incentive. Experience price asymmetry designed to reward patience - holders win while early sellers lose accumulated value to the community.
+                A self-running POLereum smart contract that pays you POL -- no staking, no tokens, no games, no promises other than code. True POI never stops. Never sleeps. Revolutionary DeFi protocol built on proven POWH3D mathematics with enhanced features. TRUE POI implements a sophisticated dividend system, bonus pool mechanics, and anti-whale protection to create the ultimate holding incentive. Experience price asymmetry designed to reward patience - holders win while early sellers lose accumulated value to the community.
             </span>
         </h6>
     </div>
@@ -100,16 +100,16 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-header">
-                           <i class="fab fa-ethereum"></i>
-                            <h4>Total ETH Reserve</h4>
+                           <i class="fab fa-POLereum"></i>
+                            <h4>Total POL Reserve</h4>
                         </div>
-                        <div class="stat-value" id="totalEth">0.00 ETH</div>
-                        <div class="stat-usd" id="totalEthUsd">$0.00000000</div>
+                        <div class="stat-value" id="totalPOL">0.00 POL</div>
+                        <div class="stat-usd" id="totalPOLUsd">$0.00000000</div>
                         <div class="stat-tooltip">
                             <i class="fas fa-info-circle"></i>
                             <div class="tooltip-content">
-                                <h5>Total ETH Reserve</h5>
-                                <p>This is the total Ethereum held by the smart contract at this moment. Every time someone buys POI tokens, ETH flows into this reserve. When someone sells, ETH flows out. The reserve acts as the backing for all POI tokens in circulation - it's the real ETH that gives POI its value. A growing reserve indicates more buyers than sellers, strengthening the ecosystem. This ETH is completely controlled by the smart contract's mathematical rules - no admin access, no rug pulls possible.</p>
+                                <h5>Total POL Reserve</h5>
+                                <p>This is the total POLereum held by the smart contract at this moment. Every time someone buys POI tokens, POL flows into this reserve. When someone sells, POL flows out. The reserve acts as the backing for all POI tokens in circulation - it's the real POL that gives POI its value. A growing reserve indicates more buyers than sellers, strengthening the ecosystem. This POL is completely controlled by the smart contract's mathematical rules - no admin access, no rug pulls possible.</p>
                             </div>
                         </div>
                     </div>
@@ -119,12 +119,12 @@
                             <i class="fas fa-coins"></i>
                             <h4>Market Cap</h4>
                         </div>
-                        <div class="stat-value" id="heroMarketCap">0.00 ETH</div>
+                        <div class="stat-value" id="heroMarketCap">0.00 POL</div>
                         <div class="stat-tooltip">
                             <i class="fas fa-info-circle"></i>
                             <div class="tooltip-content">
                                 <h5>What is Market Cap?</h5>
-                                <p>Market cap is simply total supply * current price - a theoretical value, not actual liquidity. Just like Bitcoin has a trillion-dollar market cap but you can't sell all Bitcoin for a trillion dollars, or how Apple shares have massive market cap but the company doesn't hold that in cash. The ETH reserve is the actual liquidity available right now. Market cap will always be higher because: (1) The bonding curve means each POI costs more than the previous one, (2) If people tried to sell all tokens, the price would crash to zero long before reaching the last token, (3) Our 21% price spread and 10% fees create additional value capture. This gap is healthy - it shows value has been distributed to holders through dividends rather than sitting idle. The reserve is real ETH you can withdraw; market cap is just a number.</p>
+                                <p>Market cap is simply total supply * current price - a theoretical value, not actual liquidity. Just like Bitcoin has a trillion-dollar market cap but you can't sell all Bitcoin for a trillion dollars, or how Apple shares have massive market cap but the company doesn't hold that in cash. The POL reserve is the actual liquidity available right now. Market cap will always be higher because: (1) The bonding curve means each POI costs more than the previous one, (2) If people tried to sell all tokens, the price would crash to zero long before reaching the last token, (3) Our 21% price spread and 10% fees create additional value capture. This gap is healthy - it shows value has been distributed to holders through dividends rather than sitting idle. The reserve is real POL you can withdraw; market cap is just a number.</p>
                             </div>
                         </div>
                     </div>
@@ -134,19 +134,19 @@
                             <i class="fas fa-gift"></i>
                             <h4>Bonus Pool</h4>
                         </div>
-                        <div class="stat-value" id="bonusPool">0.00 ETH</div>
+                        <div class="stat-value" id="bonusPool">0.00 POL</div>
                         <div class="stat-usd" id="bonusPoolUsd">$0.00000000</div>
                         <div class="bonus-threshold">
                             <div class="threshold-bar">
                                 <div class="threshold-progress" id="thresholdProgress"></div>
                             </div>
-                            <span>Next distribution at <span id="bonusThreshold">0.00000000</span> ETH</span>
+                            <span>Next distribution at <span id="bonusThreshold">0.00000000</span> POL</span>
                         </div>
                         <div class="stat-tooltip">
                             <i class="fas fa-info-circle"></i>
                             <div class="tooltip-content">
                                 <h5>Bonus Pool Mechanism</h5>
-                                <p>This is TRUE POI's revolutionary feature! The price asymmetry system (buyers pay 11% more, sellers receive 10% less) creates this bonus pool. Every transaction feeds it with ETH that gets distributed to ALL POI holders when the threshold is reached. The threshold mechanics are simple: it started at 15 ETH and decreases by 0.01 ETH with every transaction on the contract. When it reaches 0.1 ETH minimum, it automatically resets to 1 ETH and continues decreasing by 0.01 ETH per transaction - this cycle repeats forever. For example, if the threshold is at 5 ETH and the pool accumulates 5.5 ETH, all 5.5 ETH gets distributed proportionally to POI holders. After 490 transactions, the threshold would hit 0.1 ETH, reset to 1 ETH, and the cycle continues. This creates frequent, predictable distributions that reward patience - those who hold through multiple distributions earn significantly more than early sellers who panic. It's mathematically designed to create diamond hands!</p>
+                                <p>This is TRUE POI's revolutionary feature! The price asymmetry system (buyers pay 11% more, sellers receive 10% less) creates this bonus pool. Every transaction feeds it with POL that gets distributed to ALL POI holders when the threshold is reached. The threshold mechanics are simple: it started at 15 POL and decreases by 0.01 POL with every transaction on the contract. When it reaches 0.1 POL minimum, it automatically resets to 1 POL and continues decreasing by 0.01 POL per transaction - this cycle repeats forever. For example, if the threshold is at 5 POL and the pool accumulates 5.5 POL, all 5.5 POL gets distributed proportionally to POI holders. After 490 transactions, the threshold would hit 0.1 POL, reset to 1 POL, and the cycle continues. This creates frequent, predictable distributions that reward patience - those who hold through multiple distributions earn significantly more than early sellers who panic. It's mathematically designed to create diamond hands!</p>
                             </div>
                         </div>
                     </div>
@@ -160,14 +160,14 @@
                             <div class="price-row">
                                 <span>Buy Price:</span>
                                 <div class="price-detail">
-                                    <span class="price-eth" id="currentBuyPrice">0.00000000 ETH</span>
+                                    <span class="price-POL" id="currentBuyPrice">0.00000000 POL</span>
                                     <span class="price-usd-small" id="currentBuyPriceUsd">$0.00000000</span>
                                 </div>
                             </div>
                             <div class="price-row">
                                 <span>Sell Price:</span>
                                 <div class="price-detail">
-                                    <span class="price-eth" id="currentSellPrice">0.00000000 ETH</span>
+                                    <span class="price-POL" id="currentSellPrice">0.00000000 POL</span>
                                     <span class="price-usd-small" id="currentSellPriceUsd">$0.00000000</span>
                                 </div>
                             </div>
@@ -196,12 +196,12 @@
                         <div class="price-display">
                             <div class="price-item">
                                 <span class="price-label">Buy Price</span>
-                                <span class="price-value" id="buyPrice">0.00000000 ETH</span>
+                                <span class="price-value" id="buyPrice">0.00000000 POL</span>
                                 <span class="price-usd" id="buyPriceUsd">$0.00000000</span>
                             </div>
                             <div class="price-item">
                                 <span class="price-label">Sell Price</span>
-                                <span class="price-value" id="sellPrice">0.00000000 ETH</span>
+                                <span class="price-value" id="sellPrice">0.00000000 POL</span>
                                 <span class="price-usd" id="sellPriceUsd">$0.00000000</span>
                             </div>
                         </div>
@@ -216,7 +216,7 @@
                             <input type="hidden" id="referralAddress" value="0x18C3943522C3Fbe648DCBA9A652A9711a3bE643e">
                             
                             <div class="input-group">
-                                <label>ETH Amount</label>
+                                <label>POL Amount</label>
                                 <input type="number" id="buyAmount" placeholder="0.0" step="0.001" min="0">
                                 <div class="input-helper">
                                     <span><i class="fas fa-coins" style="color: #627eea; margin-right: 8px;"></i><span id="buyTokensEstimate">0.00000000</span> POI</span>
@@ -233,7 +233,7 @@
                                 <label>POI Amount</label>
                                 <input type="number" id="sellAmount" placeholder="0.0" step="0.001" min="0">
                                 <div class="input-helper">
-                                    <span><i class="fab fa-ethereum" style="color: #627eea; margin-right: 8px;"></i><span id="sellEthEstimate">0.00000000</span> ETH</span>
+                                    <span><i class="fab fa-POLereum" style="color: #627eea; margin-right: 8px;"></i><span id="sellPOLEstimate">0.00000000</span> POL</span>
                                     <button onclick="setMaxSell()" class="max-btn">MAX</button>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@
                                     <i class="fas fa-percentage"></i>
                                     <span>Dividends (include ref commission and POI sales)</span>
                                 </div>
-                                <div class="balance-value" id="userDividends">0.00000000 ETH</div>
+                                <div class="balance-value" id="userDividends">0.00000000 POL</div>
                                 <div class="balance-usd" id="userDividendsUsd">$0.00000000</div>
                             </div>
                             
@@ -275,7 +275,7 @@
                                     <i class="fas fa-users"></i>
                                     <span>Referral Rewards</span>
                                 </div>
-                                <div class="balance-value" id="userReferrals">0.00000000 ETH</div>
+                                <div class="balance-value" id="userReferrals">0.00000000 POL</div>
                                 <div class="balance-usd" id="userReferralsUsd">$0.00000000</div>
                             </div>
                         </div>     -->
@@ -294,7 +294,7 @@
                         <div class="limit-info">
                             <div class="limit-item">
                                 <span>Withdraw Limit</span>
-                                <span id="withdrawLimitRemaining">0.00000000 ETH</span>
+                                <span id="withdrawLimitRemaining">0.00000000 POL</span>
                             </div>
                         </div>
                     </div>
@@ -320,16 +320,16 @@
                         </p>
                         <br>
                         <p style="margin-bottom: 0.8em;">
-                            <i class="fas fa-check-circle" style="color: #00ff00; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>10%</em></strong> -- Ethereum dividends paid instantly to POI holders after every entry, and again upon every exit.<br>
+                            <i class="fas fa-check-circle" style="color: #00ff00; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>10%</em></strong> -- POLereum dividends paid instantly to POI holders after every entry, and again upon every exit.<br>
                             <i class="fas fa-check-circle" style="color: #00ff00; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>4%</em></strong> -- Reserved for referral-based rewards that strengthen the ecosystem through active sharing.<br>
                             <i class="fas fa-check-circle" style="color: #00ff00; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>1%</em></strong> -- Developer fee for maintaining the project and ecosystem integrity. A simple, transparent management fee.
                         </p>
                         <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
                         <p style="margin-bottom: 0.8em;">
-                            <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">No staking! No waiting! No dashboards! You earn <em>real ETH</em> -- distributed live, on-chain, and forever fair.</strong>
+                            <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">No staking! No waiting! No dashboards! You earn <em>real POL</em> -- distributed live, on-chain, and forever fair.</strong>
                         </p>
                         <br>
-                        <p style="margin-bottom: 0.8em;"><em>POI is pegged to Ethereum's price movement and flow in the contract</em>, increasing and decreasing in sync with ETH itself.</p>
+                        <p style="margin-bottom: 0.8em;"><em>POI is pegged to POLereum's price movement and flow in the contract</em>, increasing and decreasing in sync with POL itself.</p>
                     </div>
 
                     <!-- Card 2: Smart Price Technology -->
@@ -344,7 +344,7 @@
                             <em>amplifying upward movement</em> and rewarding consistent activity through growing demand and transaction flow.
                         </p>
                         <p style="margin-bottom: 0.8em;">
-                            <i class="fas fa-chart-line" style="color: #ff4444; margin-right: 8px; transform: scaleY(-1); display: inline-block;"></i> A <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>0.9x multiplier</em></strong> is applied at the time of exit, cushioning the drop while reinforcing long-term strength and ETH liquidity.
+                            <i class="fas fa-chart-line" style="color: #ff4444; margin-right: 8px; transform: scaleY(-1); display: inline-block;"></i> A <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>0.9x multiplier</em></strong> is applied at the time of exit, cushioning the drop while reinforcing long-term strength and POL liquidity.
                         </p>
                         <br>
                         <p style="margin-bottom: 0.8em;"><i class="fas fa-chart-bar" style="color: #6366f1; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">Result:</strong><br>
@@ -371,23 +371,23 @@
                             <i class="fas fa-bullseye" style="color: #e74c3c; margin-right: 8px;"></i> Why It's Different
                         </h6>
                         <ul style="list-style: none; padding-left: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;"><i class="fas fa-unlock" style="color: #00ff00; margin-right: 8px;"></i> ETH is distributed instantly and automatically -- no claiming, no waiting.</li>
-                            <li style="margin-bottom: 8px;"><i class="fas fa-sync-alt" style="color: #3498db; margin-right: 8px;"></i> Inspired by the original, rebuilt for the future -- trustless, ethical, and battle-tested.</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-unlock" style="color: #00ff00; margin-right: 8px;"></i> POL is distributed instantly and automatically -- no claiming, no waiting.</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-sync-alt" style="color: #3498db; margin-right: 8px;"></i> Inspired by the original, rebuilt for the future -- trustless, POLical, and battle-tested.</li>
                             <li style="margin-bottom: 8px;"><i class="fas fa-globe" style="color: #2ecc71; margin-right: 8px;"></i> It's not just a contract -- it's a movement for fairer, transparent distribution.</li>
                             <li style="margin-bottom: 8px;"><i class="fas fa-brain" style="color: #9b59b6; margin-right: 8px;"></i> Fully transparent code -- no edits, no gimmicks.</li>
                             <li style="margin-bottom: 8px;"><i class="fas fa-shield-alt" style="color: #f39c12; margin-right: 8px;"></i> Immutable and indestructible -- once deployed, it <em>cannot be paused, stopped, or changed.</em></li>
                         </ul>
-                        <p style="margin-bottom: 0.8em;"><i class="fas fa-gem" style="color: #e91e63; margin-right: 8px;"></i> Only <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>7 ETH</em></strong> seeds the contract at launch:</p>
+                        <p style="margin-bottom: 0.8em;"><i class="fas fa-gem" style="color: #e91e63; margin-right: 8px;"></i> Only <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>7 POL</em></strong> seeds the contract at launch:</p>
                       
                         <p style="margin-bottom: 0.8em;">
-                            In the past, these contracts were seeded with hundreds of ETH -- raising the price before the community had a fair chance to enter.<br>
+                            In the past, these contracts were seeded with hundreds of POL -- raising the price before the community had a fair chance to enter.<br>
                             <em>This is the first launch designed to reward believers with radical honesty and fair distribution from day one.</em><br>
                             Public code. Public launch. <em>No manipulation.</em>
                         </p>
                         <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
                         <p style="margin-bottom: 0.8em;"><i class="fas fa-globe-americas" style="color: #17a2b8; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>Proof of Influence (POI)</em></strong></p>
                         <p style="margin-bottom: 0.8em;">
-                            When others join through your link, you receive <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>4% referral commission in ETH</em></strong> -- a true reward for authentic outreach.<br>
+                            When others join through your link, you receive <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>4% referral commission in POL</em></strong> -- a true reward for authentic outreach.<br>
                             Share results. Share excitement. Earn influence.
                         </p>
                     </div>
@@ -399,17 +399,17 @@
                         </h6>
                         <p style="margin-bottom: 0.8em;">
                             <ul style="list-style: none; padding-left: 0; margin: 0;">
-                                <li style="margin-bottom: 8px;"><i class="fas fa-dollar-sign" style="color: #f1c40f; margin-right: 8px;"></i> POI represents instantly withdrawable Ethereum.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-dollar-sign" style="color: #f1c40f; margin-right: 8px;"></i> POI represents instantly withdrawable POLereum.</li>
                                 <li style="margin-bottom: 8px;"><i class="fas fa-star" style="color: #e74c3c; margin-right: 8px;"></i> This is <em>True POI</em>.</li>
-                                <li style="margin-bottom: 8px;"><i class="fas fa-sync-alt" style="color: #3498db; margin-right: 8px;"></i> The rebirth of clean Ethereum contracts.</li>
-                                <li style="margin-bottom: 8px;"><i class="fas fa-cube" style="color: #9b59b6; margin-right: 8px;"></i> A trustless ETH engine -- no price games, no token dumps, no off-chain interference.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-sync-alt" style="color: #3498db; margin-right: 8px;"></i> The rebirth of clean POLereum contracts.</li>
+                                <li style="margin-bottom: 8px;"><i class="fas fa-cube" style="color: #9b59b6; margin-right: 8px;"></i> A trustless POL engine -- no price games, no token dumps, no off-chain interference.</li>
                                 <li style="margin-bottom: 8px;"><i class="fas fa-shield-alt" style="color: #f39c12; margin-right: 8px;"></i><em> Immutable! Autonomous! Transparent!</em></li>
                             </ul>
                         </p>
                         <hr style="margin: 20px 0; border: 0; border-top: 1px solid #373a3d;">
                         <p style="margin-bottom: 0.8em;"><i class="fas fa-shield-alt" style="color: #2ecc71; margin-right: 8px;"></i> <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><em>Anti-Whale Feature:</em></strong></p>
                         <p style="margin-bottom: 0.8em;">
-                            <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">Maximum 10 ETH total outflow per wallet per day -- including withdrawals and token transfers.</strong> Built to protect liquidity and ensure long-term sustainability for all.
+                            <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">Maximum 10 POL total outflow per wallet per day -- including withdrawals and token transfers.</strong> Built to protect liquidity and ensure long-term sustainability for all.
                         </p>
                         <p style="margin-bottom: 0.8em;">
                             <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;"><i class="fas fa-clock" style="color: #f39c12; margin-right: 8px;"></i> The contract will be made <em>public and verifiable before launch</em> -- available for external audit.</strong> Once live, it <em>cannot be stopped, changed, or reversed</em>.<br>
@@ -452,7 +452,7 @@
                     <div class="referral-stats">
                         <div class="referral-stat">
                             <span class="stat-label">Total Referral Earnings</span>
-                            <span class="stat-value" id="totalReferralEarnings">0.00000000 ETH</span>
+                            <span class="stat-value" id="totalReferralEarnings">0.00000000 POL</span>
                         </div>
                     </div>
                 </div>
@@ -485,7 +485,7 @@
 
  <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-value" id="heroTotalEth">0.00 ETH</span>
+                            <span class="stat-value" id="heroTotalPOL">0.00 POL</span>
                             <span class="stat-label">Reserve</span>
                          </div>
                         <div class="stat-item">
@@ -493,11 +493,11 @@
                             <span class="stat-label">POI Supply</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-value" id="heroMarketCapBottom">0.00 ETH</span>
+                            <span class="stat-value" id="heroMarketCapBottom">0.00 POL</span>
                             <span class="stat-label">Market Cap</span>
                          </div> 
                         <div class="stat-item">
-                            <span class="stat-value" id="heroBonusPool">0.00 ETH</span>
+                            <span class="stat-value" id="heroBonusPool">0.00 POL</span>
                             <span class="stat-label">Bonus Pool</span>
                         </div>
                     </div>
@@ -519,7 +519,7 @@
                     <a href="whitepaper.html" target="_blank">Whitepaper</a>
                 <a href="Response-To-False-Claim.html" target="_blank">Comparison</a>
                 <a href="#" onclick="openModal('faqModal')">FAQ</a>
-                <a href="https://etherscan.io/address/0xd4e3311816aa8447f1988686e0ce74b4c74d851c" target="_blank">Smart Contract</a>
+                <a href="https://polygonscan.com/address/0xbb31e2c4c01a0fc26227fb8e96cc73a9e89529df" target="_blank">Smart Contract</a>
                 <a href="TruePoi-AuditReport.pdf" target="_blank">Audit Report</a>
                     <a href="https://t.me/truepoi" target="_blank"><i class="fab fa-telegram"></i>Telegram</a>
                 </div>
@@ -575,11 +575,11 @@
                 </div>
                 <div class="faq-item">
                     <h3>What is the bonus pool mechanism?</h3>
-                    <p>The price asymmetry system (buyers pay 11% more, sellers receive 10% less) creates this bonus pool. Every transaction feeds it with ETH that gets distributed to ALL POI holders when the threshold is reached. The threshold mechanics are simple: it started at 15 ETH and decreases by 0.01 ETH with every transaction on the contract. When it reaches 0.1 ETH minimum, it automatically resets to 1 ETH and continues decreasing by 0.01 ETH per transaction - this cycle repeats forever. For example, if the threshold is at 5 ETH and the pool accumulates 5.5 ETH, all 5.5 ETH gets distributed proportionally to POI holders. After 490 transactions, the threshold would hit 0.1 ETH, reset to 1 ETH, and the cycle continues. This creates frequent, predictable distributions that reward patience - those who hold through multiple distributions earn significantly more than early sellers who panic. It's mathematically designed to create diamond hands!</p>
+                    <p>The price asymmetry system (buyers pay 11% more, sellers receive 10% less) creates this bonus pool. Every transaction feeds it with POL that gets distributed to ALL POI holders when the threshold is reached. The threshold mechanics are simple: it started at 15 POL and decreases by 0.01 POL with every transaction on the contract. When it reaches 0.1 POL minimum, it automatically resets to 1 POL and continues decreasing by 0.01 POL per transaction - this cycle repeats forever. For example, if the threshold is at 5 POL and the pool accumulates 5.5 POL, all 5.5 POL gets distributed proportionally to POI holders. After 490 transactions, the threshold would hit 0.1 POL, reset to 1 POL, and the cycle continues. This creates frequent, predictable distributions that reward patience - those who hold through multiple distributions earn significantly more than early sellers who panic. It's mathematically designed to create diamond hands!</p>
                 </div>
                 <div class="faq-item">
                     <h3>How does anti-whale protection work?</h3>
-                    <p>Daily limits of 10 ETH are enforced on sells, withdrawals, and transfers to prevent large holders from draining the contract or manipulating the market. This protects smaller investors.</p>
+                    <p>Daily limits of 10 POL are enforced on sells, withdrawals, and transfers to prevent large holders from draining the contract or manipulating the market. This protects smaller investors.</p>
                 </div>
                 <div class="faq-item">
                     <h3>What are the fees?</h3>
@@ -614,8 +614,8 @@
                 </div>
                 
                     <div class="faq-item">
-                    <h3>What is market cap and why is it higher than the ETH reserve?</h3>
-                    <p>Market cap is simply total supply * current price - a theoretical value, not actual liquidity. Just like Bitcoin has a trillion-dollar market cap but you can't sell all Bitcoin for a trillion dollars, or how Apple shares have massive market cap but the company doesn't hold that in cash. The ETH reserve is the actual liquidity available right now. Market cap will always be higher because: (1) The bonding curve means each POI costs more than the previous one, (2) If people tried to sell all tokens, the price would crash to zero long before reaching the last token, (3) Our 21% price spread and 10% fees create additional value capture. This gap is healthy - it shows value has been distributed to holders through dividends rather than sitting idle. The reserve is real ETH you can withdraw; market cap is just a number.</P>
+                    <h3>What is market cap and why is it higher than the POL reserve?</h3>
+                    <p>Market cap is simply total supply * current price - a theoretical value, not actual liquidity. Just like Bitcoin has a trillion-dollar market cap but you can't sell all Bitcoin for a trillion dollars, or how Apple shares have massive market cap but the company doesn't hold that in cash. The POL reserve is the actual liquidity available right now. Market cap will always be higher because: (1) The bonding curve means each POI costs more than the previous one, (2) If people tried to sell all tokens, the price would crash to zero long before reaching the last token, (3) Our 21% price spread and 10% fees create additional value capture. This gap is healthy - it shows value has been distributed to holders through dividends rather than sitting idle. The reserve is real POL you can withdraw; market cap is just a number.</P>
                 </div>
                 
                  <div class="faq-item">
